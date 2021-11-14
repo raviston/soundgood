@@ -58,7 +58,7 @@ public class FloatWidgetService extends Service {
                         audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
                         return true;
                     case MotionEvent.ACTION_MOVE:
-                        params.x = initialX + (int) (event.getRawX() - initialTouchX);
+                        params.x = initialX - (int) (event.getRawX() - initialTouchX);
                         params.y = initialY + (int) (event.getRawY() - initialTouchY);
                         if(params.y > 860)
                         {
