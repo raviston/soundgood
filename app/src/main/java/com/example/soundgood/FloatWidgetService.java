@@ -60,6 +60,10 @@ public class FloatWidgetService extends Service {
                     case MotionEvent.ACTION_MOVE:
                         params.x = initialX + (int) (event.getRawX() - initialTouchX);
                         params.y = initialY + (int) (event.getRawY() - initialTouchY);
+                        if(params.y > 860)
+                        {
+                            android.os.Process.killProcess(android.os.Process.myPid());
+                        }
                         mWindowManager.updateViewLayout(mFloatingWidget, params);
                         return true;
                 }
